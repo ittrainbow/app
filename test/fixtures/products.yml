@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Book 1
+  description: Книга 1. Первый текст для объема
+  image_url: ruby1.png
+  price: 10
+
+two:
+  title: Book 2
+  description: Книга 2. Второй текст для объема
+  image_url: ruby2.png
+  price: 20
+
+ruby:
+  title: Programming Ruby 1.9
+  description: Ruby is the fastest growing and most exciting dynamic
+    language out there. If you need to get working programs
+    delivered fast, you should add Ruby to your toolbox.
+  image_url: ruby3.png
+  price: 30
