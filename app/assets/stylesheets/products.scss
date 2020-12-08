@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0.5em;
     a {
-        padding: 0.354em 0.5em;
+        padding: 0.354em 1.5em;
         border-radius: 0.354em;
     }
     table {
@@ -32,7 +32,7 @@
         @media (min-width: 30em) {
             display: block;
             img {
-                height: 10em;
+                height: 9em;
             }
         }
     }    
@@ -58,18 +58,4 @@
          padding: 0.5em 0;
         }
     }
-}
-
-@keyframes product-highlight {
-    0% {
-        background: rgb(194, 16, 29);
-    }
-    100% {
-        background: none;
-    }
-}
-
-.product-highlight {
-    animation: product-highlight 1s;
-    font-size: 1.2em;
 }
