@@ -20,6 +20,7 @@
                             format: "%n %u",
                             strip_insignificant_zeros: false) 
                         %>
+                        <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
                     </div>
                 </li>
             <% end %>
