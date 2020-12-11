@@ -90,3 +90,14 @@ header.main {
         }
     }
 }
+
+.notice, #notice {
+    background: #ccc;
+    border-radius: 0.5em;
+    border: solid 0.177em #000;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 1em 1.414em;
+    text-align: center;
+}
