@@ -12,8 +12,8 @@
                     <%= image_tag(product.image_url) %>
                     <h2><%= product.title %></h2>
                     <p>
-                        <%= sanitize(product.description) %>
-                        <%= truncate(product.description) %>
+                        <%= sanitize(product.description, length: 80) %>
+                        <%= truncate(product.description, length: 40) %>
                     </p>
                     <div class="price">
                         <%= number_to_currency(product.price, unit: "₽", format: "%n %u") %>
