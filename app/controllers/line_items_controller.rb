@@ -26,7 +26,19 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
+
+    # product = Product.find_by(params[:product_id])
+    # в этом случае любое изменение количества продуктов в корзине
+    # будь то создание нового line_item, добавление через Add to Cart или плюсом в самой корзине
+    # изменяет только количество продукта с id=1
+    # зато тест "creating a Line item" в test/system/line_item_test.rb проходит
+
     product = Product.find(params[:product_id])
+    # в этом случае при кликах по кнопкам все работает нормально
+    # но создание Line Item через веб-интерфейс в /line_items/new валится с ошибкой
+    # Couldn't find Product without an ID
+    # заодно тест "creating a Line item" в test/system/line_item_test.rb валится с той же ошибкой
+    
     @line_item = @cart.add_product(product)
     session[:counter] = 0
 

@@ -10,16 +10,23 @@
   </thead>
 
   <tbody>
-    <% @carts.each do |cart| %>
       <tr>
-        <td><%= link_to 'Show', cart %></td>
+        <td>Current cart is # <%= session[:cart_id] %></td>
+      </tr>
+    <% @carts.each do |cart| %>
+
+      <tr>
+        <td><%= link_to cart do %> 
+          Cart #<%= cart.id %>
+        <% end %></td>
         <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', destroy_new_carts_path(:cart_id => cart),
+          method: :delete, data: { confirm: 'Sure?' } %></td>
+
       </tr>
     <% end %>
+    <tr>
+      <td><%= link_to 'New Cart', new_cart_path %></td>
+    </tr>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Cart', new_cart_path %>
