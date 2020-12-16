@@ -40,11 +40,12 @@ class LineItemsController < ApplicationController
     # заодно тест "creating a Line item" в test/system/line_item_test.rb валится с той же ошибкой
     
     @line_item = @cart.add_product(product)
-    session[:counter] = 0
+
+    # session[:counter] = 0
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_index_url }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }

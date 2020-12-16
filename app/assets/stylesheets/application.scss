@@ -101,3 +101,30 @@ header.main {
     padding: 1em 1.414em;
     text-align: center;
 }
+
+#cart {
+    article {
+        h2 {
+            margin-top: 0;
+        }
+        background: #ccc;
+        border-radius: 0.5em;
+        margin: 1em;
+        padding: 0.5em;
+        @media (min-width: 30em) {
+            margin: 0; // desktop doesn't need this margin
+        }
+    }
+}
+
+#menu {
+    article {
+        background: #ccc;
+        border-radius: 0.5em;
+        margin: 1em;
+        padding: 0.5em;
+        @media (min-width: 30em) {
+            margin: 0; // desktop doesn't need this margin
+        }
+    }
+}
