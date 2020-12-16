@@ -21,4 +21,9 @@ class StoreController < ApplicationController
     @show_msg1 = counter_message if @count > 5
     @show_msg2 = @count if @count > 5
   end
+
+  def null_count
+    session[:counter] = 0
+    redirect_to :store_index
+  end
 end
