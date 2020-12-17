@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart
 
   # GET /carts
   # GET /carts.json
@@ -12,10 +12,11 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @cart = Cart.find(session[:cart_id])
-
+    # @cart = Cart.find(session[:cart_id])
     # @cart = Cart.find(params[:id])
   end
+
+
 
   # GET /carts/new
   def new
@@ -63,7 +64,7 @@ class CartsController < ApplicationController
 
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Your cart is empty' }
+      format.html { redirect_to store_index_url }
       format.json { head :no_content }
     end
   end
@@ -81,10 +82,6 @@ class CartsController < ApplicationController
   
   private
     # Use callbacks to share common setup or constraints between actions.
-
-    def set_cart
-      @cart = Cart.find(params[:id])
-    end
   
     # Only allow a list of trusted parameters through.
     def cart_params
@@ -95,5 +92,17 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to carts_url, notice: 'Invalid cart'
     end
+    private
 
+    # def current_cart
+    #     @current_cart = session[:cart_id] ? Cart.find(session[:cart_id]) : Cart.create
+    #     session[:cart_id] = @current_cart.id if @current_cart.new_record?
+    # end
+
+    # def set_cart
+    #     @cart = Cart.find(session[:cart_id])
+    # rescue ActiveRecord::RecordNotFound
+    #     @cart = Cart.create
+    #     session[:cart_id] = @cart.id
+    # end
 end

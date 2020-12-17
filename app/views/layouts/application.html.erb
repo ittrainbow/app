@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project 1</title>
+    <title>MyApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -24,17 +24,12 @@
           <li><%= link_to 'Products', products_url %></li>
           <li><%= link_to 'Carts', carts_url %></li>
           <li><%= link_to 'Line Items', line_items_url %></li>
-          <li><%= @time %></li>
-          <li><%= @show_msg1 %><%= @show_msg2 %></li>
-        </ul>
-        
-        <br>
-
-        <% if @cart %>
+          <li><%= @show_msg1 %><%= @show_msg2 %>&nbsp</li>
+          <br>
           <div id="cart" class="carts">
-            <%= render @cart %>
+            <%= render_if @cart && @cart.line_items.any?, partial: 'carts/cart' %>
           </div>
-        <% end %>
+        </ul>
 
       </nav>
 
