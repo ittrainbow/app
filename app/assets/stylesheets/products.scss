@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .products {
+        font-size: 1em;
     margin: 0;
     padding: 0.5em;
     a {
@@ -58,4 +59,18 @@
          padding: 0.5em 0;
         }
     }
+}
+
+@keyframes products-highlight {
+    0% {
+        background: rgb(194, 16, 29);
+    }
+    100% {
+        background: none;
+    }
+}
+
+.products-highlight {
+    animation: line-item-highlight 1s;
+    font-size: 1.2em;
 }

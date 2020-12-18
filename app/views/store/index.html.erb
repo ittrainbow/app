@@ -1,24 +1,36 @@
 <h1>Catalog</h1>
 
+<%# <%= render @products %>
+
 <ul class="catalog">
     <% cache @products do %>
         <% @products.each do |product| %>
-        <% cache product do %>
-            <li>
-            <%= link_to line_items_path(product_id: product), method: :post, remote: true do %>
-                <%= image_tag(product.image_url) %>
+            <% cache product do %>
+                <li>
+                <%= link_to line_items_path(product_id: product), method: :post, remote: true do %>
+                    <%= image_tag(product.image_url) %>
+                <% end %>
+                <h2><%= product.title %></h2>
+                <p>
+                    <%= sanitize(product.description, length: 80) %>
+                    <%= truncate(product.description, length: 40) %>
+                </p>
+                <div class="price">
+
+                <% if product == @product %>
+                    <div class="products-highlight">
+                        <%= number_to_currency(product.price, unit: "₽", format: "%n %u") %>
+                    </div>
+                <% else %>
+                    <div class="price">
+                        <%= number_to_currency(product.price, unit: "₽", format: "%n %u") %>
+                    </div>
+                <% end %>
+
+                    <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
+                </div>
+                </li>
             <% end %>
-            <h2><%= product.title %></h2>
-            <p>
-                <%= sanitize(product.description, length: 80) %>
-                <%= truncate(product.description, length: 40) %>
-            </p>
-            <div class="price">
-                <%= number_to_currency(product.price, unit: "₽", format: "%n %u") %>
-                <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
-            </div>
-            </li>
-        <% end %>
         <% end %>
     <% end %>
 </ul>
