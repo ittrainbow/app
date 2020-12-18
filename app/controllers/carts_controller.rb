@@ -16,8 +16,6 @@ class CartsController < ApplicationController
     # @cart = Cart.find(params[:id])
   end
 
-
-
   # GET /carts/new
   def new
     @cart = Cart.new
@@ -65,6 +63,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to store_index_url }
+      format.js 
       format.json { head :no_content }
     end
   end
@@ -76,6 +75,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to carts_url, notice: 'Cart destroyed' }
+      format.js 
       format.json { head :no_content }
     end
   end
