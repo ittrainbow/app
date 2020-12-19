@@ -1,8 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_action :set_cart
-
-    # при наличии условий only корзина пропадает из нав-бара почти везде
-    # before_action :set_cart, only: [:show, :edit, :update, :destroy]
+    
     private
 
     def current_cart
