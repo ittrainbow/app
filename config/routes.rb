@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :users
-  resources :line_items
+  
+  resources :line_items do
+    collection do
+      post :decrease
+    end
+  end
+
   root 'store#index', as: 'store_index'
   
   resources :products
