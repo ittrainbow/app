@@ -1,11 +1,24 @@
 /*
-= require_tree
+* This is a manifest file that'll be compiled into application.css,
+* which will include all the files listed below.
+**
+Any CSS and SCSS file within this directory, lib/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be
+* referenced here using a relative path.
+**
+You're free to add application-wide styles to this file and they'll appear
+* at the bottom of the compiled file so the styles you add here take
+* precedence over styles defined in any other CSS/SCSS files in this
+* directory. Styles in this file should be added after the last require_*
+* statement. It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
 */
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #ccc;
 }
 
 header.main {
@@ -13,7 +26,7 @@ header.main {
     @media (min-width: 30em) {
         text-align: left; // left align on desktop
     }
-    background: #aaa;
+    background: #bbb;
     margin: 0;
     h1 {
         display: none;
@@ -35,8 +48,8 @@ header.main {
     }
 
     nav {
-        padding-bottom: 1.5em;
-        background: #aaa;
+        padding-bottom: 0.5em;
+        background: #bbb;
         text-align: center; // mobile has centered nav
         @media (min-width: 30em) {
             text-align: left; // desktop nav is left-aligned
@@ -67,7 +80,7 @@ header.main {
     } 
       
     main {
-        padding: 1em;
+        padding: 0.5em;
 
         table {
             border-collapse: collapse;
@@ -79,7 +92,7 @@ header.main {
         }
         
         tr.list_line_odd {
-            background-color: #ccc;
+            background-color: #effeef;
         }
 
         img {
@@ -93,7 +106,7 @@ header.main {
 }
 
 .notice, #notice {
-    background: #ccc;
+    background: #ddd;
     border-radius: 0.5em;
     border: solid 0.177em #000;
     color: #000;
@@ -106,26 +119,91 @@ header.main {
 #cart {
     article {
         h2 {
-            margin-top: 0;
+            margin-top: 2em;
         }
-        background: #aaa;
-        border-radius: 0.5em;
-        margin: 1em;
+        background: #bbb;
+        border-radius: 0.4em;
+        margin: 0em;
         padding: 0.5em;
-        @media (min-width: 30em) {
-            margin: 0; // desktop doesn't need this margin
+        @media (width: 30em) {
+                margin: 1; // desktop doesn't need this margin
         }
     }
 }
 
-#menu {
-    article {
-        background: #ccc;
-        border-radius: 0.5em;
-        margin: 1em;
+.depot_form {
+    padding: 0 1em;
+    h1 {
+        font-size: 1.99em;
+        line-height: 1.41em;
+        margin-bottom: 0.5em;
+        padding: 0;
+    }
+    .field, .actions {
+        margin-bottom: 0.5em;
+        padding: 0;
+    }
+    .actions {
+        text-align: right;
+        padding: 1em 0;
+    }
+    input, textarea, select, option {
+        border: solid thin #888;
+        box-sizing: border-box;
+        font-size: 1em;
         padding: 0.5em;
-        @media (min-width: 30em) {
-            margin: 0; // desktop doesn't need this margin
+        width: 100%;
+    }
+    label {
+        padding: 0.5em 0;
+    }
+    input[type="submit"] {
+        background-color: #ddd;
+        border-radius: 0.354em;
+        border: solid thin #888;
+        color: black;
+        font-size: 1.41em;
+        font-weight: bold;
+        padding: 0.354em 1em;
+    }
+    input[type="submit"]:hover {
+        background-color: rgb(196, 20, 20);
+    }
+    // Also, clean up the error styling
+    #error_explanation {
+        background-color: white;
+        border-radius: 1em;
+        border: solid thin red;
+        margin-bottom: 0.5em;
+        padding: 0.5em;
+        width: 100%;
+        h2 {
+            background: none;
+            color: red;
+            font-size: 1.41em;
+            line-height: 1.41em;
+            padding: 1em;
+        }
+        ul {
+            margin-top: 0;
+            li {
+                color: red;
+                font-size: 1em;
+            }
+        }
+    }
+    .field_with_errors {
+        background: none;
+        color: red;
+        width: 100%;
+        label {
+            font-weight: bold;
+        }
+        label::before {
+            content: "! ";
+        }
+        input,textarea {
+            background: pink;
         }
     }
 }
