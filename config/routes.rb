@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   root 'store#index', as: 'store_index'
   
-  resources :products
+  resources :products do
+    get :who_bought, on: :member
+  end
 
   resources :carts do
     # delete :destroy_new, on: :collection
