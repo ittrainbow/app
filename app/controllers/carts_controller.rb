@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:create, :decrease, :destroy]
+  before_action :set_cart2_show
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts
@@ -11,7 +12,9 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    # показать корзину активной сессии в любом случае
     # @cart = Cart.find(session[:cart_id])
+
     @cart = Cart.find(params[:id])
   end
 
@@ -71,9 +74,9 @@ class CartsController < ApplicationController
     @cart = Cart.find(params[:cart_id])
     @cart.destroy
 
-    session[:cart_id] = nil
+    # session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart destroyed' }
+      format.html { redirect_to carts_url }
       format.js 
       format.json { head :no_content }
     end
@@ -83,6 +86,7 @@ class CartsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
   
     # Only allow a list of trusted parameters through.
+
     def cart_params
       params.fetch(:cart, {})
     end
@@ -91,5 +95,4 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to carts_url, notice: 'Invalid cart'
     end
-    private
 end

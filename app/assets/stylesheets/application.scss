@@ -19,6 +19,7 @@ You're free to add application-wide styles to this file and they'll appear
 body {
     margin: 0;
     padding: 0;
+    background: #bbb;
 }
 
 header.main {
@@ -26,7 +27,7 @@ header.main {
     @media (min-width: 30em) {
         text-align: left; // left align on desktop
     }
-    background: #bbb;
+    background: #999;
     margin: 0;
     h1 {
         display: none;
@@ -49,7 +50,7 @@ header.main {
 
     nav {
         padding-bottom: 0.5em;
-        background: #bbb;
+        background: #999;
         text-align: center; // mobile has centered nav
         @media (min-width: 30em) {
             text-align: left; // desktop nav is left-aligned
@@ -73,14 +74,14 @@ header.main {
                 }
                 a:hover {
                     background: none;
-                    color: rgb(255, 255, 255);
+                    color:#ccc;
                 }
             }
         }
     } 
       
     main {
-        padding: 0.5em;
+        padding: 1em;
 
         table {
             border-collapse: collapse;
@@ -92,7 +93,7 @@ header.main {
         }
         
         tr.list_line_odd {
-            background-color: #effeef;
+            background-color: #bbb;
         }
 
         img {
@@ -121,7 +122,7 @@ header.main {
         h2 {
             margin-top: 2em;
         }
-        background: #bbb;
+        background: #999;
         border-radius: 0.4em;
         margin: 0em;
         padding: 0.5em;

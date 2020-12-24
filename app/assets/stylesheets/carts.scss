@@ -12,7 +12,7 @@
         white-space: nowrap;
     }
     td.quantity::after {
-        content: " ×";
+        content: "×";
     }
     td.price {
         font-weight: bold;
@@ -33,7 +33,7 @@
     input[type="submit"] {
         background-color: #333;
         border-radius: 0.354em;
-        border: solid thin #555;
+        border: solid thin #000;
         color: white;
         font-size: 1em;
         padding: 0.354em 1em;

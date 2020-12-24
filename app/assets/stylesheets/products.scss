@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .products {
-        font-size: 1em;
+    font-size: 1em;
     margin: 0;
     padding: 0.5em;
     a {
@@ -16,12 +16,7 @@
         padding: 0.5em;
         margin: 0;
     }
-        
-    // tr.list_line_odd {
-    //     background-color: #effeef;
-    // }
-    //
-    // записанное в application.scss важнее 
+
         
     td.image {
         // Hide this on mobile devices

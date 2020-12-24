@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_cart2_show
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -62,6 +63,9 @@ class ProductsController < ApplicationController
     if stale?(@latest_order)
       respond_to do |format|
         format.atom
+        format.json { render :json => @product.to_json(:include => :orders) }
+        format.html
+        format.xml
       end
     end
   end

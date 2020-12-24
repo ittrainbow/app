@@ -16,7 +16,7 @@
         <br>
         <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
         <br>
-        <%= button_to 'Checkout', new_order_path, method: :get, class: "checkout"%>
+        <%= render 'my/button' %>
     </div>
 
     <% end %>

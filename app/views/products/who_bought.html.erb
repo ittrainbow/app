@@ -1,0 +1,32 @@
+<h3>Who bought <%= @product.title %></h3>
+ 
+
+<% for order in @product.orders %>
+    <table>
+        <p>
+            <tr>
+                <%= link_to order do %>View order # <%= order.id %> <% end %>
+            </tr>
+        </p>
+        <p>
+            <tr>
+                <td>Name:</td>
+                <td><%= order.name %></td>
+            </tr>
+            <tr>
+                <td>E-mail: </td>
+                <td><%= order.email %><td><br>
+            </tr>
+                <td>Address: </td>
+                <td><%= order.address %><td><br>
+            <tr>
+                <td>Pay type: </td>
+                <td><%= order.pay_type %><td><br>
+            </tr>
+            <tr>
+                <td>Date: </td>
+                <td><%= order.created_at %><td><br>
+            </tr>
+        </p>
+    </table>
+<% end %>
