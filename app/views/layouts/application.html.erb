@@ -28,8 +28,7 @@
           <li><%= @show_msg1 %><%= @show_msg2 %>&nbsp</li>
           <br>
           <div id="cart" class="carts">
-            <%= render_if @cart && @cart.line_items.any?, partial: 'carts/cart' %>
-              
+            <%= render_if @cart && @cart.line_items.any?, partial: 'carts/cart' %>              
           </div>
         </ul>
 

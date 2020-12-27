@@ -6,28 +6,21 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-
-
-    <tbody>
-        <tr>
-          <td>Cart #<%= session[:cart_id] %></td>
-          <td>is current</td>
-        </tr>
-      <% @carts.each do |cart| %>
-
-        <tr>
-          <td>Cart #<%= cart.id %></td>
-          <td><%= link_to 'Show', cart, method: :get %></td>
-          <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-          <td><%= link_to 'D', cart, method: :delete, data: { confirm: 'Sure?' } %></td>
-          <td><%= link_to 'Destroy New', cart_destroy_new_path(:cart_id => cart), method: :delete, data: { confirm: 'Sure?' } %></td>
-        </tr>
-      <% end %>
+  <tbody>
+    <p>
+      <%= render 'my/currentcart' %>
+    </p>
+    <% @carts.each do |cart| %>
       <tr>
-        <td><%= link_to 'New Cart', new_cart_path %></td>
+        <td>Cart #<%= cart.id %></td>
+        <td><%= link_to 'Show', cart, method: :get %></td>
+        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
+        <td><%= link_to 'D', cart, method: :delete, data: { confirm: 'Sure?' } %></td>
+        <td><%= link_to 'Destroy New', destroy_new_carts_path(:cart_id => cart), method: :delete, data: { confirm: 'Sure?' } %></td>
       </tr>
-    </tbody>
-
-
+    <% end %>
+    <tr><p>
+      <td><%= link_to 'New Cart', new_cart_path %></td>
+    </p></tr>
+  </tbody>
 </table>
