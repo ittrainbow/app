@@ -17,7 +17,7 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Description", with: @product.description
     fill_in "Image url", with: @product.image_url
     fill_in "Price", with: @product.price
-    fill_in "Title", with: @product.title
+    fill_in "Title", with: "123"
     click_on "Create Product"
 
     assert_text "Product was successfully created"
@@ -44,6 +44,8 @@ class ProductsTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
+    # assert_text "Product was successfully destroyed"
     assert_text "Product was successfully destroyed"
+
   end
 end

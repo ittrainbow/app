@@ -1,4 +1,9 @@
 <article>
+
+    <% if notice %>
+        <aside id="notice"><%= notice %></aside>
+    <% end %>
+
     <% if @cart.line_items.any? %>
 
     <h2>Your Cart</h2>
@@ -13,9 +18,7 @@
     </table>
 
     <div class="submit">
-        <br>
         <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
-        <br>
         <%= render 'my/button' %>
     </div>
 
