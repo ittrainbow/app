@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :set_cart2_show
-  # before_action :ensure_cart_isnt_empty, only: :new
+  before_action :ensure_cart_isnt_empty, only: :new
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -31,7 +31,6 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
-    @showbutton = 0
 
     respond_to do |format|
       if @order.save
@@ -82,9 +81,9 @@ class OrdersController < ApplicationController
   end
 
   def ensure_cart_isnt_empty
-    # if @cart.line_items.empty?
-    # redirect_to store_index_url, notice: 'Your cart is empty'
-    # end
+    if @cart.line_items.empty?
+      redirect_to store_index_url, notice: 'Your cart is empty.'
+    end
   end
 
   def pay_type_params

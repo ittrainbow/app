@@ -13,7 +13,6 @@ class CartsTest < ApplicationSystemTestCase
   test "creating a Cart" do
     visit carts_url
     click_on "New Cart"
-
     click_on "Create Cart"
 
     assert_text "Cart was successfully created"

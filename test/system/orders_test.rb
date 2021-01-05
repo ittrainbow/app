@@ -10,12 +10,9 @@ class OrdersTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Orders"
   end
 
-  test "creating a Order" do
-
-    # тест упадет потому что корзина пустая
-    # чтобы прошел надо закомментировать в orders_controller.rb 
-    # before_action :ensure_cart_isnt_empty, only: :new
-
+  test "creating a Order" do    
+    visit store_index_url    
+    click_on 'Add to Cart', match: :first   
     visit orders_url
     click_on "New Order"
 
@@ -125,9 +122,9 @@ class OrdersTest < ApplicationSystemTestCase
     
     assert_selector "#order_po_number"
 
-    # fill_in "PO #", with: "1234567890"
+    fill_in "PO #", with: "1234567890"
 
-    # click_button "Place Order"
+    click_button "Place Order"
   end
 
   test "show hide cart" do
