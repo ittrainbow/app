@@ -44,4 +44,13 @@ class LineItemsTest < ApplicationSystemTestCase
 
     assert_text "Line item was successfully destroyed"
   end
+
+  
+  test "highlighting" do
+    visit store_index_url
+
+    click_on 'Add to Cart', match: :first
+
+    assert_selector "tr", class: "line-item-highlight"
+  end
 end

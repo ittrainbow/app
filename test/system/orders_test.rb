@@ -63,4 +63,82 @@ class OrdersTest < ApplicationSystemTestCase
 
     assert_text "Order was successfully destroyed"
   end
+
+  test "check routing & account number" do
+    visit store_index_url    
+    click_on 'Add to Cart', match: :first    
+    click_on 'Checkout'
+    
+    fill_in 'order_name', with: 'Dave Thomas'
+    fill_in 'order_address', with: '123 Main Street'
+    fill_in 'order_email', with: 'dave@example.com'
+    
+    assert_no_selector "#order_routing_number"
+    assert_no_selector "#order_account_number"
+    
+    select 'Check', from: 'Pay type'
+    
+    assert_selector "#order_routing_number"
+    assert_selector "#order_account_number"
+
+    fill_in "Routing #", with: "123456"
+    fill_in "Account #", with: "987654"
+
+    click_button "Place Order"
+  end
+
+  test "check credit card number & expiry" do
+    visit store_index_url    
+    click_on 'Add to Cart', match: :first    
+    click_on 'Checkout'
+    
+    fill_in 'order_name', with: 'Dave Thomas'
+    fill_in 'order_address', with: '123 Main Street'
+    fill_in 'order_email', with: 'dave@example.com'
+    
+    assert_no_selector "#order_credit_card_number"    
+    assert_no_selector "#order_expiration_date"
+    
+    select 'Credit card', from: 'Pay type'
+    
+    assert_selector "#order_credit_card_number"
+    assert_selector "#order_expiration_date"
+
+    fill_in "CC #", with: "1234567890"
+    fill_in "Expiry", with: "01/21"
+
+    click_button "Place Order"
+  end
+
+  test "check purchase order" do
+    visit store_index_url    
+    click_on 'Add to Cart', match: :first    
+    click_on 'Checkout'
+    
+    fill_in 'order_name', with: 'Dave Thomas'
+    fill_in 'order_address', with: '123 Main Street'
+    fill_in 'order_email', with: 'dave@example.com'
+    
+    assert_no_selector "#order_po_number"
+    
+    select 'Purchase order', from: 'Pay type'
+    
+    assert_selector "#order_po_number"
+
+    # fill_in "PO #", with: "1234567890"
+
+    # click_button "Place Order"
+  end
+
+  test "show hide cart" do
+    visit store_index_url
+    click_on 'Add to Cart', match: :first
+    assert_selector "h2", text: "Your Cart"
+
+    page.accept_confirm do
+      click_on "Empty cart", match: :first
+    end
+
+    assert_no_selector "h2", text: "Your Cart"
+  end
 end
