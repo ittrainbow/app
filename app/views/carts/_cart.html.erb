@@ -7,6 +7,7 @@
 
     <table>
         <%= render(@cart.line_items) %>
+        <%# <%= render 'line_items/line_item' %>
         <br>
         <tfoot>
             <th colspan="2">Total:</th>
@@ -15,7 +16,9 @@
     </table>
 
     <div class="submit">
+        <br>
         <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+        <br>
         <%= render 'my/button' %>
     </div>
 

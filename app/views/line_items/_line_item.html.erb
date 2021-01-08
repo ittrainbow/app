@@ -3,28 +3,24 @@
 <% else %>
     <tr>
 <% end %>
-    <table>
-        <td class="quantity">
-            <%= line_item.quantity %>
-        </td>
-        <td>
-            <%= line_item.product.title %>
-        </td>
-        <td class="price">
-            <%= number_to_currency(line_item.total_price, unit: "₽", format: "%n %u") %>
-        </td>
-        
-        <td class="buttons">
-            <%= button_to 'x', line_item, method: :delete, remote: true %>
-        </td>
-        <%#
-        <td class="buttons">
-            <%= button_to "+", line_items_path(product_id: line_item.product_id), method: :post, remote: true %>
-        </td>
-        <%#
-        <td class="buttons">    
-            <%= button_to "-1", decrease_line_items_path(product_id: line_item.product_id), method: :post, remote: true %>
-        </td>
+    <td> test </td>
+    <td class="quantity"> <%= line_item.quantity %> </td>
+    <td> <%= line_item.product.title %> </td>
+    <td class="price"> <%= number_to_currency(line_item.total_price, unit: "₽", format: "%n %u") %> </td>
+    
+    <!-- 
 
-    </table>
+    <td class="buttons">
+        <%= button_to 'x', line_item, method: :delete, remote: true %>
+    </td>
+    
+    <td class="buttons">
+        <%= button_to "+", line_items_path(product_id: line_item.product_id), method: :post, remote: true %>
+    </td>
+    
+    <td class="buttons">    
+        <%= button_to "-1", decrease_line_items_path(product_id: line_item.product_id), method: :post, remote: true %>
+    </td>
+
+    -->
 </tr>
