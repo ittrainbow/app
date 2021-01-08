@@ -1,6 +1,8 @@
 require "application_system_test_case"
 
 class OrdersTest < ApplicationSystemTestCase
+  include ActiveJob::TestHelper
+
   setup do
     @order = orders(:one)
   end
@@ -62,6 +64,10 @@ class OrdersTest < ApplicationSystemTestCase
   end
 
   test "check routing & account number" do
+
+    LineItem.delete_all
+    Order.delete_all
+
     visit store_index_url    
     click_on 'Add to Cart', match: :first    
     click_on 'Checkout'
@@ -82,6 +88,27 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in "Account #", with: "987654"
 
     click_button "Place Order"
+    
+    # а вот если это все через отложку делать - то тесты валятся
+    # perform_enqueued_jobs do
+    #   click_button "Place Order"
+    # end
+
+    orders = Order.all
+    assert_equal 1, orders.size
+    order = orders.first
+
+    assert_equal "Dave Thomas",      order.name
+    assert_equal "123 Main Street",  order.address
+    assert_equal "dave@example.com", order.email
+    assert_equal "Check",            order.pay_type
+    assert_equal 1, order.line_items.size
+
+    # ну это ясно валится, поднимать мейлер на heroku в задачи не входит
+    # mail = ActionMailer::Base.deliveries.last
+    # assert_equal ["dave@example.com"],                 mail.to
+    # assert_equal 'Sam Ruby <depot@example.com>',       mail[:from].value
+    # assert_equal "Pragmatic Store Order Confirmation", mail.subject
   end
 
   test "check credit card number & expiry" do
