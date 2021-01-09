@@ -1,4 +1,9 @@
 <p>
+  <strong>Order #
+  <%= @order.id %></strong>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @order.name %>
 </p>
@@ -16,6 +21,10 @@
 <p>
   <strong>Pay type:</strong>
   <%= @order.pay_type %>
+</p>
+
+<p>
+  <%= render 'orderview' %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

@@ -21,7 +21,7 @@
         <td class="description">
           <h2><%= product.title %></h2>
           <p>
-            <%= truncate(strip_tags(product.description), length: 80) %>
+            <%= truncate(strip_tags(product.description), length: 20) %>
           </p>
           <p>
               <h3>
@@ -46,17 +46,18 @@
             <li>
               <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
             </li>
-          </td>
-          <td>
+            <br>
             <li>
-              <%= link_to 'Bought JSON', who_bought_product_path(product, format: :json), method: :get %>
+              <%= link_to 'Who bought HTML', who_bought_product_path(product, format: :html), method: :get %>
+            </li>
+            <!--
+            <li>
+              <%= link_to 'Who bought XML', who_bought_product_path(product, format: :xml), method: :get %>
             </li>
             <li>
-              <%= link_to 'Bought HTML', who_bought_product_path(product, format: :html), method: :get %>
+              <%= link_to 'Who bought JSON', who_bought_product_path(product, format: :json), method: :get %>
             </li>
-            <li>
-              <%= link_to 'Bought XML', who_bought_product_path(product, format: :xml), method: :get %>
-            </li>
+            -->
           </td>
           </ul>
         </td>
