@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  resources :orders
+  
+  get 'admin' => 'admin#index'
+  
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+  get 'sessions/create'
+  get 'sessions/destroy'
+
   resources :users
+  resources :orders
   
   resources :line_items do
     collection do
@@ -16,8 +27,8 @@ Rails.application.routes.draw do
 
   resources :carts do
     collection do
-    get :current_cart
-    delete :destroy_new
+      get :current_cart
+      delete :destroy_new
     end
   end
 
