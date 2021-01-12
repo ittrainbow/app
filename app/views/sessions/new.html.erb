@@ -1,6 +1,9 @@
 <section class="depot_form">
     <% if flash[:alert] %>
+    <!--
     <   aside class="notice"><%= flash[:alert] %></aside>
+    -->
+    <%= flash[:alert] %>
     <% end %>
     <%= form_tag do %>
         <h2>Please Log In</h2>
