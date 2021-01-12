@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :set_cart2_show
+  skip_before_action :authorize
   
   def new
   end

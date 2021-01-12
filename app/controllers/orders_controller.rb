@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   before_action :set_cart2_show
   before_action :ensure_cart_isnt_empty, only: :new
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize
 
   # GET /orders
   # GET /orders.json

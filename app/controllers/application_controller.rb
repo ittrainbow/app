@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :checkoutbutton
+    before_action :authorize
 
     def checkoutbutton
       @showbutton = 1
@@ -23,5 +24,14 @@ class ApplicationController < ActionController::Base
     def set_cart2_show
         @cart = Cart.find(session[:cart_id])
     rescue
+    end
+
+    protected
+
+    def authorize
+        unless User.find_by(id: session[:user_id])
+            redirect_to login_url, notice: "Please log in"
+            
+        end
     end
 end
