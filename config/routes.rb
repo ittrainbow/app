@@ -11,25 +11,30 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   resources :users
-  resources :orders
-  
-  resources :line_items do
-    collection do
-      post :decrease
-    end
-  end
-
-  root 'store#index', as: 'store_index'
   
   resources :products do
     get :who_bought, on: :member
   end
 
-  resources :carts do
-    collection do
-      get :current_cart
-      delete :destroy_new
+  scope '(:locale)' do
+
+    resources :orders
+
+    resources :line_items do
+      collection do
+        post :decrease
+      end
     end
+
+    resources :carts do
+      collection do
+        get :current_cart
+        delete :destroy_new
+      end
+    end
+
+    root 'store#index', as: 'store_index', via: :all
+
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
