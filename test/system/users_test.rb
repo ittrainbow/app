@@ -11,12 +11,12 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "creating a User" do
-    visit users_url
+    visit store_index_url
     click_on "New User"
 
-    fill_in "Name", with: @user.name
-    fill_in "Password", with: 'secret'
-    fill_in "Password confirmation", with: 'secret'
+    fill_in "Name:", with: @user.name
+    fill_in "Password:", with: 'secret'
+    fill_in "Confirmation:", with: 'secret'
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -28,8 +28,9 @@ class UsersTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @user.name
+    fill_in "Current pwd", with: 'secret'
     fill_in "Password", with: 'secret'
-    fill_in "Password confirmation", with: 'secret'
+    fill_in "Confirmation", with: 'secret'
     click_on "Update User"
 
     assert_text "User was successfully updated"

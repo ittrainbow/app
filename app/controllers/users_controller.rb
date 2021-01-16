@@ -41,14 +41,21 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to users_url, notice: "User #{@user.name} was successfully updated." }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    @user = User.find(params[:id])
+
+    if @user.authenticate(params[:user][:current_password])
+      params[:user].delete :current_password
+      respond_to do |format|
+        if @user.update_attributes(params.require(:user).permit(:password, :password_confirmation))
+          format.html { redirect_to users_url, notice: "User #{@user.name} was successfully updated." }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :edit }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to edit_user_path(@user), notice: 'Current password is incorrect'
     end
   end
 
@@ -74,6 +81,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
+      params.require(:user).permit(:name, :password, :password_confirmation, :current_password)
     end
 end
