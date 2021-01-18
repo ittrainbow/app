@@ -1,0 +1,26 @@
+ru:
+  layouts:
+    application:
+      title: "Прилажка"
+      home: "Магазин"
+      products: "Продукты"
+      carts: "Корзины"
+      line_items: "Элементы"
+      login: "Войти"
+      new_user: "Регистрация"
+      orders: "Заказы"
+      logout: "Выйти"
+      
+  store:
+    index:
+      title_html: "Каталог"
+      add_html: "В корзину"
+
+  number:
+    currency:
+      format:
+        unit: "₽"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%n %u"

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
     before_action :checkoutbutton
     before_action :authorize
+    before_action :set_i18n_locale_from_params
 
     def checkoutbutton
       @showbutton = 1
