@@ -1,6 +1,6 @@
-<h1>Editing Cart</h1>
+<h1><%= t('.edit') %></h1>
 
 <%= render 'form', cart: @cart %>
 
-<%= link_to 'Show', @cart %> |
-<%= link_to 'Back', carts_url %>
+<%= link_to t('.show'), @cart %> |
+<%= link_to t('.back'), carts_url %>

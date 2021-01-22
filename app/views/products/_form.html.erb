@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title%>
+    <%= form.label t('.title') %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label t('.description') %>
     <%= form.text_area :description, rows: 10, cols: 60 %>
   </div>
 
   <div class="field">
-    <%= form.label :image_url %>
+    <%= form.label t('.image_url') %>
     <%= form.text_field :image_url %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label t('.price') %>
     <%= form.text_field :price %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('.submit') %>
   </div>
 <% end %>

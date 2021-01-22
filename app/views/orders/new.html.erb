@@ -1,7 +1,7 @@
-<h1>New Order</h1>
+<h1><%= t('.legend') %></h1>
 
 <%= render 'form', order: @order %>
 
-<%= link_to 'Back', orders_path %>
+<%= link_to t('.back'), orders_path %>
 
 <%= javascript_pack_tag("pay_type") %>

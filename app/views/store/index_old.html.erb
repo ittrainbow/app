@@ -1,0 +1,32 @@
+<h1><%= t('.title_html') %></h1>
+<ul class="catalog">
+    <% cache @products do %>
+        <% @products.each do |product| %>
+            <% cache product do %>
+                <li>
+                    <%= link_to line_items_path(product_id: product), method: :post, remote: true do %>
+                        <%= image_tag(product.image_url) %>
+                    <% end %>
+                    <h2><%= product.title %></h2>
+                    <p>
+                        <%= sanitize(product.description) %>
+                        <!-- <%= truncate(product.description, length: 40) %> -->
+                    </p>
+                    <div class="price">
+                        <% if product == @product %>
+                            <div class="products-highlight">
+                                <%= number_to_currency(product.price) %>
+                            </div>
+                        <% else %>
+                            <div class="price">
+                                <%= number_to_currency(product.price) %>
+                            </div>
+                        <% end %>
+
+                        <%= render 'my/button2' %>
+                    </div>
+                </li>
+            <% end %>
+        <% end %>
+    <% end %>
+</ul>

@@ -1,6 +1,6 @@
 <% if notice %><p id="notice"><%= notice %></p><% end %>
 
-<h1>Products</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <tfoot>
@@ -38,17 +38,17 @@
           <ul>
           <td>
             <li>
-              <%= link_to 'Show', product %>
+              <%= link_to  t('.show'), product %>
             </li>
             <li>
-              <%= link_to 'Edit', edit_product_path(product) %>
+              <%= link_to  t('.edit'), edit_product_path(product) %>
             </li>
             <li>
-              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to  t('.destroy'), product, method: :delete, data: { confirm: 'Are you sure?' } %>
             </li>
             <br>
             <li>
-              <%= link_to 'Who bought HTML', who_bought_product_path(product, format: :html), method: :get %>
+              <%= link_to  t('.whobought'), who_bought_product_path(product, format: :html), method: :get %>
             </li>
             <!--
             <li>

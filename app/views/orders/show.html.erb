@@ -1,25 +1,24 @@
 <p>
-  <strong>Order #
-  <%= @order.id %></strong>
+  <strong><%= t('.order') %><%= @order.id %></strong>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('.name') %></strong>
   <%= @order.name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong><%= t('.address') %></strong>
   <%= @order.address %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong><%= t('.email') %></strong>
   <%= @order.email %>
 </p>
 
 <p>
-  <strong>Pay type:</strong>
+  <strong><%= t('.paytype') %></strong>
   <%= @order.pay_type %>
 </p>
 
@@ -27,5 +26,5 @@
   <%= render 'orderview' %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to t('.edit'), edit_order_path(@order) %> |
+<%= link_to t('.back'), orders_path %>

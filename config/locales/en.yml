@@ -1,4 +1,5 @@
 en:
+
   layouts:
     application:
       title: "MyApp"
@@ -24,3 +25,191 @@ en:
         separator: "."
         delimiter: ","
         format: "%n %u"
+
+  orders:
+    new:
+      legend: "Please Enter Your Details"
+      back: "Back"
+    index:
+      orders: "Orders"
+      name: "Name"
+      address_html: "Address"
+      email: "E-mail"
+      pay_type: "Pay with"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      new: "New order"
+    form:
+      name: "Name:"
+      address_html: "Address:"
+      email: "E-mail:"
+      pay_type: "Pay with:"
+      pay_prompt_html: "Select a payment method"
+      submit: "Place Order"
+      pay_types:
+        check: "Check"
+        credit_card: "Credit Card"
+        purchase_order: "Purchase Order"
+      check_pay_type:
+        routing_number: "Routing #"
+        account_number: "Account #"
+      credit_card_pay_type:
+        cc_number: "CC #"
+        expiration_date: "Expiry"
+      purchase_order_pay_type:
+        po_number: "PO #"
+    show:
+      order: "Order #"
+      name: "Name:"
+      address: "Address:"
+      email: "E-mail:"
+      paytype: "Pay type:"
+      edit: "Edit"
+      back: "Back"
+    edit:
+      edit: "Editing Order"
+      show: "Show"
+      back: "Back"
+
+
+  errors:
+    template:
+      body: "There were problems with the following fields:"
+      header:       
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
+
+  carts:
+    cart:
+      title:       "Your Cart"
+      empty:       "Empty cart"
+      checkout:    "Checkout"
+      total:       "Sum"
+    edit:
+      edit: "Edit cart"      
+      show: "Show"
+      back: "Back"
+    index:
+      carts: "Carts"
+      cart: "Cart №"
+      show: "Show"
+      edit: "Edit"
+      destroy:  "Destroy"
+      new: "New Cart"
+    show:
+      back: "Back"
+    form:      
+      submit: "Update Cart"
+
+  my:
+    button:
+      checkout:   "Checkout"
+    button2:
+      add_to_cart:  "Add to Cart"
+
+
+  activerecord:
+    models:
+      order: "Order"
+    attributes:
+      order:
+        address: "Address"
+        name: "Name"
+        email: "E-mail"
+        pay_type: "Pay type"
+  
+  products:
+    index:
+      title: "Products"
+      show: "Show"
+      edit: "Edit"
+      destroy:  "Destroy"
+      whobought:  "Who Bought"
+    show:
+      title: "Title:"
+      description: "Description:"
+      image_url: "Image URL:"
+      price: "Price:"
+      edit: "Edit"
+      back: "Back"
+    form:      
+      title: "Title:"
+      description: "Description:"
+      image_url: "Image URL:"
+      price: "Price:"
+      submit: "Update product"
+    edit:      
+      title: "Edit product"
+      show: "Show"
+      back: "Back"
+    who_bought:
+      name: "Name:"
+      email: "E-mail:"
+      address: "Address:"
+      paytype: "Pay type:"
+      date: "Date:"
+      order: "View order # "
+      whobought: "Who bought"
+  
+  line_items:
+    index:
+      title: "Line Items"
+      product: "Product:"
+      cart: "Cart:"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      new: "New Line Item"
+    show:
+      product: "Product:"
+      cart: "Cart:"
+      edit: "Edit"
+      back: "Back"
+    edit:
+      editing: "Edit Line Item"
+      show: "Show"
+      back: "Back"
+    form:
+      product: "Product:"
+      cart: "Cart:"
+      update: "Update Line Item"
+    new:
+      new: "New Line Item"
+      back: "Back"
+
+  users:
+    index:
+      users: "Users"
+      name: "Name"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      new_user: "New User"
+    edit:
+      edit: "Edit User"
+      show: "Show"
+      back: "Back"
+    show:
+      name: "Name:"
+      show: "Show"
+      edit: "Edit"
+      back: "Back"
+    form:
+      details: "Enter user details"
+      name: "Name:"
+      current_pwd: "Current password:"
+      new_pwd: "New password:"
+      confirm_pwd: "Confirm new password:"
+      update_user: "Update User"
+    form2:
+      details: "Enter new user details"
+      name: "Name:"
+      new_pwd: "New password:"
+      confirm_pwd: "Confirm new password:"
+      create: "Create user"
+    new:
+      new_user: "New user"
+      back: "Back"  
+   
+  thanks: "Thank you for your order"

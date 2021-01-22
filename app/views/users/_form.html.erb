@@ -13,30 +13,30 @@
     </div>
   <% end %>
 
-  <h2>Enter User Details</h2>
+  <h2><%= t('.details') %></h2>
 
   <div class="field">
-    <%= form.label :name, 'Name:' %>
+    <%= form.label :name, t('.name') %>
     <%= form.text_field :name, size: 40 %>
   </div>
 
   <div class="field">
-    <%= form.label :current_password, 'Current pwd:' %>
+    <%= form.label :current_password, t('.current_pwd') %>
     <%= form.password_field :current_password %>
   </div>
 
   <div class="field">
-    <%= form.label :password, 'Password:' %>
+    <%= form.label :password, t('.new_pwd') %>
     <%= form.password_field :password %>
   </div>
 
   <div class="field">
-    <%= form.label :password_confirmation, 'Confirmation:' %>
+    <%= form.label :password_confirmation, t('.confirm_pwd') %>
     <%= form.password_field :password_confirmation, id: :user_password_confirmation, size: 40 %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('.update_user') %>
   </div>
 <% end %>
 
