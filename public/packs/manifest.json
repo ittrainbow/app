@@ -18,6 +18,14 @@
         "/packs/js/hello_react-a653c7ce98a168e6c74f.js.map"
       ]
     },
+    "locale_switcher": {
+      "js": [
+        "/packs/js/locale_switcher-8bce3d6bd22b19b77098.js"
+      ],
+      "js.map": [
+        "/packs/js/locale_switcher-8bce3d6bd22b19b77098.js.map"
+      ]
+    },
     "pay_type": {
       "js": [
         "/packs/js/pay_type-f6b8200c32386eaeab5e.js"
@@ -28,7 +36,9 @@
     }
   },
   "hello_react.js": "/packs/js/hello_react-a653c7ce98a168e6c74f.js",
-  "hello_react.js.map": "/packs/js/hello_react-a653c7ce98a168e6c74f.js.map",
+  "hello_react.js.map": "/packs/js/hello_react-a653c7ce98a168e6c74f.js.map",  
+  "locale_switcher.js": "/packs/js/locale_switcher-8bce3d6bd22b19b77098.js",
+  "locale_switcher.js.map": "/packs/js/locale_switcher-8bce3d6bd22b19b77098.js.map",
   "pay_type.js": "/packs/js/pay_type-f6b8200c32386eaeab5e.js",
   "pay_type.js.map": "/packs/js/pay_type-f6b8200c32386eaeab5e.js.map"
 }
