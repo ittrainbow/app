@@ -21,7 +21,7 @@
                     </div>
                 <% end %>
 
-                <%= button_to t('.add_html'), line_items_path(product_id: product) %>
+                <%= button_to t('.add_html'), line_items_path(product_id: product), remote: true %>
             </div>
         </li>
     <% end %>
