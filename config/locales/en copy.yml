@@ -41,10 +41,10 @@ en:
       destroy: "Destroy"
       new: "New Order"
     form:
-      name: "Name"
-      address_html: "Address"
-      email: "E-mail"
-      pay_type: "Pay with"
+      name: "Name:"
+      address_html: "Address:"
+      email: "E-mail:"
+      pay_type: "Pay with:"
       pay_prompt_html: "Select a payment method"
       submit: "Place Order"
       pay_types:
@@ -61,10 +61,10 @@ en:
         po_number: "PO #"
     show:
       order: "Order #"
-      name: "Name"
-      address: "Address"
-      email: "E-mail"
-      paytype: "Pay type"
+      name: "Name:"
+      address: "Address:"
+      email: "E-mail:"
+      paytype: "Pay type:"
       edit: "Edit"
       back: "Back"
     edit:
@@ -75,7 +75,7 @@ en:
 
   errors:
     template:
-      body: "There were problems with the following fields"
+      body: "There were problems with the following fields:"
       header:       
         one: "1 error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
@@ -127,43 +127,43 @@ en:
       destroy:  "Destroy"
       whobought:  "Who Bought"
     show:
-      title: "Title"
-      description: "Description"
-      image_url: "Image"
-      price: "Price"
+      title: "Title:"
+      description: "Description:"
+      image_url: "Image:"
+      price: "Price:"
       edit: "Edit"
       back: "Back"
     form:      
-      title: "Title"
-      description: "Description"
-      image_url: "Image"
-      price: "Price"
+      title: "Title:"
+      description: "Description:"
+      image_url: "Image:"
+      price: "Price:"
       submit: "Update product"
     edit:      
       title: "Edit product"
       show: "Show"
       back: "Back"
     who_bought:
-      name: "Name"
-      email: "E-mail"
-      address: "Address"
-      paytype: "Pay type"
-      date: "Date"
+      name: "Name:"
+      email: "E-mail:"
+      address: "Address:"
+      paytype: "Pay type:"
+      date: "Date:"
       order: "View order # "
       whobought: "Who bought"
   
   line_items:
     index:
       title: "Line Items"
-      product: "Product"
-      cart: "Cart"
+      product: "Product:"
+      cart: "Cart:"
       show: "Show"
       edit: "Edit"
       destroy: "Destroy"
       new: "New Line Item"
     show:
-      product: "Product"
-      cart: "Cart"
+      product: "Product:"
+      cart: "Cart:"
       edit: "Edit"
       back: "Back"
     edit:
@@ -171,8 +171,8 @@ en:
       show: "Show"
       back: "Back"
     form:
-      product: "Product"
-      cart: "Cart"
+      product: "Product:"
+      cart: "Cart:"
       update: "Save Line Item"
     new:
       new: "New Line Item"
@@ -191,22 +191,22 @@ en:
       show: "Show"
       back: "Back"
     show:
-      name: "Name"
+      name: "Name:"
       show: "Show"
       edit: "Edit"
       back: "Back"
     form:
       details: "Enter user details"
-      name: "Name"
-      current_pwd: "Current password"
-      new_pwd: "New password"
-      confirm_pwd: "Confirm new password"
+      name: "Name:"
+      current_pwd: "Current password:"
+      new_pwd: "New password:"
+      confirm_pwd: "Confirm new password:"
       update_user: "Update User"
     form2:
       details: "Enter new user details"
-      name: "Name"
-      new_pwd: "New password"
-      confirm_pwd: "Confirm new password"
+      name: "Name:"
+      new_pwd: "New password:"
+      confirm_pwd: "Confirm new password:"
       create: "Create User"
     new:
       new_user: "New User"

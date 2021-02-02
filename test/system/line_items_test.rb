@@ -13,15 +13,15 @@ class LineItemsTest < ApplicationSystemTestCase
   test "creating a Line item" do
     # см. комментарии к def create в line_items_controller.rb
 
-    # visit line_items_url
-    # click_on "New Line Item"
+    visit line_items_url
+    click_on "New Line Item"
 
-    # fill_in "Cart", with: @line_item.cart_id
-    # fill_in "Product", with: @line_item.product_id
-    # click_on "Create Line item"
+    fill_in "Cart", with: @line_item.cart_id
+    fill_in "Product", with: @line_item.product_id
+    click_on "Save Line item"
 
-    # assert_text "Line item was successfully created"
-    # click_on "Back"
+    assert_text "Line item was successfully created"
+    click_on "Back"
   end
 
   test "updating a Line item" do
@@ -30,7 +30,7 @@ class LineItemsTest < ApplicationSystemTestCase
 
     fill_in "Cart", with: @line_item.cart_id
     fill_in "Product", with: @line_item.product_id
-    click_on "Update Line item"
+    click_on "Save Line item"
 
     assert_text "Line item was successfully updated"
     click_on "Back"

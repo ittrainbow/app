@@ -7,7 +7,7 @@ ru:
       products: "Продукты"
       carts: "Корзины"
       line_items: "Элементы"
-      login: "Войти"
+      login: "Юзеры"
       new_user: "Новый юзер"
       orders: "Заказы"
       logout: "Выйти"
@@ -41,10 +41,10 @@ ru:
       destroy: "Удалить"
       new: "Новый заказ"
     form:
-      name: "Имя:"
-      address_html: "Адрес:"
-      email: "E-mail:"
-      pay_type: "Вид оплаты:"
+      name: "Имя"
+      address_html: "Адрес"
+      email: "E-mail"
+      pay_type: "Вид оплаты"
       pay_prompt_html: "Выберите способ оплаты"
       submit: "Разместить заказ"
       pay_types:
@@ -61,10 +61,10 @@ ru:
         po_number: "Номер #"
     show:
       order: "Заказ #"
-      name: "Имя:"
-      address: "Адрес:"
-      email: "E-mail:"
-      paytype: "Способ оплаты:"
+      name: "Имя"
+      address: "Адрес"
+      email: "E-mail"
+      paytype: "Способ оплаты"
       edit: "Изменить"
       back: "Назад"
     edit:
@@ -75,17 +75,17 @@ ru:
 
   errors:
     template:
-      body: "Проблемы со следующими полями:"
+      body: "Проблемы со следующими полями"
       header:       
         one: "Количество ошибок: 1, модели %{model} не удается сохранить данные"
         other: "Количество ошибок: %{count}, модели %{model} не удается сохранить данные"
 
   carts:
-    cart:
-      title:       "Ваша корзина"
-      empty:       "Очистить"
-      checkout:    "К оформлению"
-      total:       "Итого"
+    cart2:
+      title: "Ваша корзина"
+      empty: "Очистить"
+      checkout: "К оформлению"
+      total: "Итого"
     edit:
       edit: "Изменить"
       show: "Показать"
@@ -104,9 +104,9 @@ ru:
   
   my:
     button:
-      checkout:   "Оформить"
+      checkout: "Оформить"
     button2:
-      add_to_cart:  "В корзину"
+      add_to_cart: "В корзину"
 
   activerecord:
     models:
@@ -123,46 +123,46 @@ ru:
       title: "Products"
       show: "Показать"
       edit: "Изменить"
-      destroy:  "Удалить"
-      whobought:  "Кто купил"
+      destroy: "Удалить"
+      whobought: "Кто купил"
     show:
-      title: "Название:"
-      description: "Описание:"
-      image_url: "Картинка:"
-      price: "Цена:"
+      title: "Название"
+      description: "Описание"
+      image_url: "Картинка"
+      price: "Цена"
       edit: "Изменить"
       back: "Назад"
     form:    
-      title: "Название:"
-      description: "Описание:"
-      image_url: "Картинка:"
-      price: "Цена:"      
+      title: "Название"
+      description: "Описание"
+      image_url: "Картинка"
+      price: "Цена"      
       submit: "Обновить продукт"
     edit:    
       title: "Редактирование"
       show: "Показать"
       back: "Назад"
     who_bought:
-      name: "Имя:"
-      email: "Почта:"
-      address: "Адрес:"
-      paytype: "Способ оплаты:"
-      date: "Дата:"
+      name: "Имя"
+      email: "Почта"
+      address: "Адрес"
+      paytype: "Способ оплаты"
+      date: "Дата"
       order: "Посмотреть заказ # "
       whobought: "Кто купил"
 
   line_items:
     index:
       title: "Элементы"
-      product: "Продукт:"
-      cart: "Корзина:"
+      product: "Продукт"
+      cart: "Корзина"
       show: "Показать"
       edit: "Изменить"
       destroy: "Удалить"
       new: "Новый элемент"
     show:
-      product: "Продукт:"
-      cart: "Корзина:"
+      product: "Продукт"
+      cart: "Корзина"
       edit: "Изменить"
       back: "Назад"
     edit:
@@ -170,8 +170,8 @@ ru:
       show: "Показать"
       back: "Назад"
     form:
-      product: "Продукт:"
-      cart: "Корзина:"
+      product: "Продукт"
+      cart: "Корзина"
       update: "Обновить элемент"
     new:
       new: "Новый элемент"
@@ -181,7 +181,7 @@ ru:
   users:
     index:
       users: "Пользователи"
-      name: "Имя:"
+      name: "Имя"
       show: "Показать"
       edit: "Изменить"
       destroy: "Удалить"
@@ -191,22 +191,22 @@ ru:
       show: "Показать"
       back: "Изменить"
     show:
-      name: "Имя:"
+      name: "Имя"
       show: "Показать"
       edit: "Изменить"
       back: "Назад"
     form:
       details: "Ввод данных"
-      name: "Имя:"
-      current_pwd: "Текущий пароль:"
-      new_pwd: "Новый пароль:"
-      confirm_pwd: "Подтвердить пароль:"
+      name: "Имя"
+      current_pwd: "Текущий пароль"
+      new_pwd: "Новый пароль"
+      confirm_pwd: "Подтвердить пароль"
       update_user: "Сохранить"    
     form2:
       details: "Данные пользователя"
-      name: "Имя:"
-      new_pwd: "Пароль:"
-      confirm_pwd: "Подтвердить пароль:"
+      name: "Имя"
+      new_pwd: "Пароль"
+      confirm_pwd: "Подтвердить пароль"
       create: "Создать пользователя"
     new:
       new_user: "Новый пользователь"

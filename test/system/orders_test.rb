@@ -19,20 +19,20 @@ class OrdersTest < ApplicationSystemTestCase
     click_on "New Order"
 
     fill_in "Address", with: @order.address
-    fill_in "Email", with: @order.email
+    fill_in "E-mail", with: @order.email
     fill_in "Name", with: @order.name
 
     # выбор pay_type в тесте появляется только после обновления страницы проверкой
     # если отключить эту проверку то свалится на том что ордер оформлен не до конца
     # если оставить то не находит это выпадающее меню
-    # 
+    
     # что-то не так с отображением пейтайпа через js видимо
-    # 
+    
     # отключаю проверку pay_type и все что дальше 
-    # 
-    # fill_in "Pay type", with: "Check"
-    # click_on "Place Order"
-    # assert_text "Order was successfully created"
+    
+    fill_in "Pay type", with: "Check"
+    click_on "Place Order"
+    assert_text "Order was successfully created"
 
     click_on "Back"
   end
@@ -42,14 +42,14 @@ class OrdersTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Address", with: @order.address
-    fill_in "Email", with: @order.email
+    fill_in "E-mail", with: @order.email
     fill_in "Name", with: @order.name
 
     # та же лажа что в предыдущем тесте
     # 
-    # fill_in "Pay type", with: @order.pay_type
-    # click_on "Update Order"
-    # assert_text "Order was successfully updated"
+    fill_in "Pay type", with: @order.pay_type
+    click_on "Update Order"
+    assert_text "Order was successfully updated"
 
     click_on "Back"
   end

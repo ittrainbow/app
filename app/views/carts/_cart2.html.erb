@@ -1,0 +1,23 @@
+<article>
+    <% if @cart.line_items.any? %>
+
+    <h2><%= t('.title') %></h2>
+
+    <table>
+        <%= render(@cart.line_items) %>
+        <br>
+        <tfoot>
+            <th colspan="2"> <%= t('.total') %> </th>
+            <td class="price"><%= number_to_currency(@cart.total_price) %></td>
+        </tfoot>
+    </table>
+
+    <div class="submit">
+        <br>
+        <%= button_to t('.empty'), @cart, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+        <br>
+        <%= render 'my/button' %>
+    </div>
+
+    <% end %>
+</article>
