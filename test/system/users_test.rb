@@ -3,6 +3,7 @@ require "application_system_test_case"
 class UsersTest < ApplicationSystemTestCase
   setup do
     @user = users(:one)
+    @testname = "{rand(1000000)}"
   end
 
   test "visiting the index" do
@@ -14,7 +15,7 @@ class UsersTest < ApplicationSystemTestCase
     visit store_index_url
     click_on "New User"
 
-    fill_in "Name", with: '{rand(10000)}'
+    fill_in "Name", with: @testname
     fill_in "New password", with: 'secret'
     fill_in "Confirm new password", with: 'secret'
     click_on "Create User"
